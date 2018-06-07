@@ -71,10 +71,7 @@ view: fact_internet_sales {
     sql: ${TABLE}.RevisionNumber ;;
   }
 
-  dimension: sales_amount {
-    type: string
-    sql: ${TABLE}.SalesAmount ;;
-  }
+
 
   dimension: sales_order_line_number {
     type: number
@@ -116,6 +113,12 @@ view: fact_internet_sales {
     sql: ${TABLE}.UnitPriceDiscountPct ;;
   }
 
+
+  measure: sales_amount {
+    type: sum
+    label: "Sales Amount"
+    sql: ${TABLE}.SalesAmount ;;
+  }
   measure: count {
     type: count
     drill_fields: []

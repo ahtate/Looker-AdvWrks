@@ -1,17 +1,10 @@
 connection: "poc-adventureworks"
 
 # include all the views
-include: "*.view"
+include: "*.view.lkml"
 
 # include all the dashboards
-include: "*.dashboard"
-
-datagroup: advworksaht_default_datagroup {
-  # sql_trigger: SELECT MAX(id) FROM etl_log;;
-  max_cache_age: "1 hour"
-}
-
-persist_with: advworksaht_default_datagroup
+include: "*.dashboard.lkml"
 
 explore: adventure_works_dwbuild_version {}
 
